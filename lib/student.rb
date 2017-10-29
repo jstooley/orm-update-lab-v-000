@@ -65,7 +65,9 @@ class Student
     sql = <<-SQL
     SELECT * FROM students WHERE name = #{name}
     SQL
-    
+    DB[:conn].execute(sql,name).map do |row|
+      row.nre_from_db
+    end
   end
 
   # Remember, you can access your database connection anywhere in this class
