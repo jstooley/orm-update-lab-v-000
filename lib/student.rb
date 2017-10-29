@@ -29,6 +29,7 @@ class Student
   end
 
   def update
+  end
 
   def save
 
