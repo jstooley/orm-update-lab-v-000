@@ -65,9 +65,9 @@ class Student
     sql = <<-SQL
     SELECT * FROM students WHERE name = ? LIMIT 1
     SQL
-    DB[:conn].execute(sql).map do |row|
+    DB[:conn].execute(sql, name).map do |row|
       self.new_from_db(row)
-    end
+    end.first
   end
 
   # Remember, you can access your database connection anywhere in this class
