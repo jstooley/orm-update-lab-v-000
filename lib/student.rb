@@ -66,7 +66,7 @@ class Student
     SELECT * FROM students WHERE name = #{name}
     SQL
     DB[:conn].execute(sql,name).map do |row|
-      row.nre_from_db
+      row.new_from_db
     end
   end
 
