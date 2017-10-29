@@ -65,6 +65,7 @@ class Student
     sql = <<-SQL
     SELECT * FROM students WHERE name = #{name}
     SQL
+    
   end
 
   # Remember, you can access your database connection anywhere in this class
