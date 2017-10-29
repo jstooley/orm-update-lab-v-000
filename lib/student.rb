@@ -61,7 +61,10 @@ class Student
     new_student
   end
 
-  def self.find_by_name
+  def self.find_by_name(name)
+    sql = <<-SQL
+    SELECT * FROM students WHERE name = #{name}
+    SQL
   end
 
   # Remember, you can access your database connection anywhere in this class
